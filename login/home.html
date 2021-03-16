@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body{
+            background-color: #ffffcc;
+        }
+        img{
+            width: 30%;
+            display: block;
+            margin: 0 auto;
+            
+        }
+        h1{
+            text-align: center;
+            background-color: #4672a0;
+            color:#eb8625;
+        }
+        #dis{
+            width:400px;
+            height: 100px;
+            background-color: #89b4db;
+            text-align: center;
+            color:darkslategray;
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight:bold;
+            display: block;
+            margin: 0 auto;
+        }
+        
+        table{
+            margin-top: 20px;
+            border: 1px solid black;
+            font-weight: bold;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    <h1>Home Page</h1>
+    <div id="dis">
+
+    </div>
+    <table >
+        <tr>
+            <td id ="un"></td>
+            <td> <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Coforge-Logo.png" alt="Coforge"></td>
+        </tr>
+    </table>
+    <script>
+            
+            if(sessionStorage.getItem("uname") !=null){
+                var uname =sessionStorage.getItem("uname")
+                var upass = sessionStorage.getItem("upass")
+                if(uname=="sam"&&upass=="sam@1256"){
+                    document.getElementById("dis").innerHTML="Welcome to Coforgetech Mr. "+uname;
+                    document.getElementById("un").innerHTML="UserName : "+uname;
+                }else{
+                    document.getElementById("dis").innerHTML="Invalid UserName and password";
+                    
+                }
+            }else{
+                document.getElementById("un").innerHTML="UserName : Guest";
+
+            }
+    </script>
+</body>
+</html>
